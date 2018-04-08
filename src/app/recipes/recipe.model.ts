@@ -1,12 +1,16 @@
+import {Ingredient} from '../shared/ingredient.model';
+
 export class Recipe {
   private _name: String;
   private _desc: String;
   private _imagePath: String;
+  private _ingregients: Ingredient[];
 
-  constructor(name: String, desc: String, imagePath: String) {
+  constructor(name: String, desc: String, imagePath: String, ingregients: Ingredient[]) {
     this._name = name;
     this._desc = desc;
     this._imagePath = imagePath;
+    this._ingregients = ingregients;
   }
 
 
@@ -34,4 +38,12 @@ export class Recipe {
     this._imagePath = value;
   }
 
+
+  get ingregients(): Ingredient[] {
+    return this._ingregients;
+  }
+
+  set ingregients(value: Ingredient[]) {
+    this._ingregients = value;
+  }
 }
